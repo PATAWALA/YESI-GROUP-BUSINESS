@@ -1,12 +1,8 @@
-/* ====== Tailwind v4 (par défaut avec create-next-app@latest) ====== */
 @import "tailwindcss";
 
-/* ====== ALTERNATIVE Tailwind v3 : remplace la ligne ci-dessus par ======
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-====================================================================== */
-
+/* ------------------------------------------------------------------ */
+/*  VARIABLES MAISON                                                   */
+/* ------------------------------------------------------------------ */
 :root {
   --yesi-navy: #0f172a;
   --yesi-navy-soft: #1e293b;
@@ -14,6 +10,9 @@
   --yesi-amber-light: #f59e0b;
 }
 
+/* ------------------------------------------------------------------ */
+/*  BASE                                                               */
+/* ------------------------------------------------------------------ */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
@@ -22,9 +21,13 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
-/* ---- Motifs & effets maison ---- */
+/* ------------------------------------------------------------------ */
+/*  MOTIFS & EFFETS MAISON                                             */
+/* ------------------------------------------------------------------ */
 .bg-grid {
   background-image:
     linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
@@ -39,7 +42,9 @@ body {
   color: transparent;
 }
 
-/* ---- Animations ---- */
+/* ------------------------------------------------------------------ */
+/*  ANIMATIONS                                                         */
+/* ------------------------------------------------------------------ */
 @keyframes yesi-float {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-14px); }
@@ -60,7 +65,9 @@ body {
 }
 .animate-marquee { animation: yesi-marquee 32s linear infinite; }
 
-/* ---- Scrollbar discrète ---- */
+/* ------------------------------------------------------------------ */
+/*  SCROLLBAR                                                          */
+/* ------------------------------------------------------------------ */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }
 ::-webkit-scrollbar-thumb {
