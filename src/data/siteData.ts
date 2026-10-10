@@ -7,6 +7,7 @@ import {
   Clock,
   Factory,
   BadgeCheck,
+  MapPin,
   type LucideIcon,
 } from "lucide-react";
 
@@ -289,7 +290,7 @@ export type Reason = { icon: LucideIcon; title: string; text: string };
 
 export const reasons: Reason[] = [
   {
-    icon: MapPin_,
+    icon: MapPin,
     title: "Nous sommes sur place, pas derrière un écran",
     text: "Nos équipes se déplacent chaque semaine en usine. Vous ne payez jamais un fournisseur que nous n’avons pas vu.",
   },
@@ -309,9 +310,6 @@ export const reasons: Reason[] = [
     text: "Prix usine négocié + fret + douane : nous vous donnons le coût rendu réel, sans frais cachés.",
   },
 ];
-
-/* petit alias pour éviter de polluer les imports lucide dans ce fichier */
-import { MapPin as MapPin_ } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  CONTACT / FOOTER                                                   */

@@ -3,11 +3,12 @@ import {
   Phone,
   MapPin,
   MessageCircle,
-  Linkedin,
-  Facebook,
-  Instagram,
   ArrowUpRight,
 } from "lucide-react";
+
+// Icônes de marque → Font Awesome (react-icons)
+import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
+
 import {
   siteConfig,
   offices,
@@ -20,7 +21,10 @@ const year = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative overflow-hidden bg-slate-950 text-slate-400">
+    <footer
+      id="contact"
+      className="relative overflow-hidden bg-slate-950 text-slate-400"
+    >
       <div className="absolute inset-0 bg-grid opacity-20" />
       <div className="absolute -top-32 left-1/2 h-72 w-[600px] -translate-x-1/2 rounded-full bg-amber-600/10 blur-[120px]" />
 
@@ -86,9 +90,21 @@ export default function Footer() {
 
             <div className="mt-6 flex gap-2.5">
               {[
-                { href: siteConfig.socials.linkedin, Icon: Linkedin, label: "LinkedIn" },
-                { href: siteConfig.socials.facebook, Icon: Facebook, label: "Facebook" },
-                { href: siteConfig.socials.instagram, Icon: Instagram, label: "Instagram" },
+                {
+                  href: siteConfig.socials.linkedin,
+                  Icon: FaLinkedinIn,
+                  label: "LinkedIn",
+                },
+                {
+                  href: siteConfig.socials.facebook,
+                  Icon: FaFacebookF,
+                  label: "Facebook",
+                },
+                {
+                  href: siteConfig.socials.instagram,
+                  Icon: FaInstagram,
+                  label: "Instagram",
+                },
               ].map(({ href, Icon, label }) => (
                 <a
                   key={label}
