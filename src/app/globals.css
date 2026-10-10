@@ -1,26 +1,70 @@
+/* ====== Tailwind v4 (par défaut avec create-next-app@latest) ====== */
 @import "tailwindcss";
 
+/* ====== ALTERNATIVE Tailwind v3 : remplace la ligne ci-dessus par ======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+====================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --yesi-navy: #0f172a;
+  --yesi-navy-soft: #1e293b;
+  --yesi-amber: #d97706;
+  --yesi-amber-light: #f59e0b;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ---- Motifs & effets maison ---- */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.text-gradient-amber {
+  background-image: linear-gradient(90deg, #f59e0b, #d97706 55%, #b45309);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Animations ---- */
+@keyframes yesi-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+.animate-float { animation: yesi-float 7s ease-in-out infinite; }
+.animate-float-delay { animation: yesi-float 7s ease-in-out 1.6s infinite; }
+
+@keyframes yesi-pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(217, 119, 6, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+}
+.animate-pulse-ring { animation: yesi-pulse-ring 2.4s ease-out infinite; }
+
+@keyframes yesi-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee { animation: yesi-marquee 32s linear infinite; }
+
+/* ---- Scrollbar discrète ---- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb {
+  background: #0f172a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: #d97706; }
